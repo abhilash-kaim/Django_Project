@@ -1,5 +1,5 @@
 """
-URL configuration for measurements_project project.
+URL configuration for Hello project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -14,14 +14,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path, include
-from . import views
 from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('waist_measurements/', views.get_waist_measurements, name='get_waist_measurements'),
-    path('add_waist_measurement/', views.add_waist_measurement, name='add_waist_measurement'),
     path('admin/', admin.site.urls),
-    path('api/', include('measurements_app.urls'))
+    path('',include('home.urls'))
 ]
-
